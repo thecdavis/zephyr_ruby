@@ -4,6 +4,7 @@ require_relative 'resource/automations'
 require_relative 'resource/environments'
 require_relative 'resource/folders'
 require_relative 'resource/healthcheck'
+require_relative 'resource/issue_links'
 require_relative 'resource/links'
 require_relative 'resource/priorities'
 require_relative 'resource/projects'
@@ -24,6 +25,7 @@ module ZephyrRuby
     include ZephyrRuby::Client::Resource::Environments
     include ZephyrRuby::Client::Resource::Folders
     include ZephyrRuby::Client::Resource::HealthCheck
+    include ZephyrRuby::Client::Resource::IssueLinks
     include ZephyrRuby::Client::Resource::Links
     include ZephyrRuby::Client::Resource::Priorities
     include ZephyrRuby::Client::Resource::Projects
