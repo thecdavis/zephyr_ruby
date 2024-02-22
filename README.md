@@ -1,5 +1,7 @@
 # ZephyrRuby
 
+[Zephyr REST API Documentation](https://support.smartbear.com/zephyr-scale-cloud/api-docs/#section/Introduction)
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
@@ -19,9 +21,6 @@ require 'zephyr_ruby'
 
 @client = ZephyrRuby::Client.new('YOUR_API_KEY')
 ```
-
-## Zephyr Scale REST API Documentation
-- [Overview](https://support.smartbear.com/zephyr-scale-cloud/api-docs/#section/Introduction)
 
 ## Development
 

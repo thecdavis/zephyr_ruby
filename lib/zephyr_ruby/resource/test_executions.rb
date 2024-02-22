@@ -24,6 +24,10 @@ module ZephyrRuby
         def create_test_execution_link(test_execution_id, body)
           post "/testexecutions/#{test_execution_id}/links/issues", body
         end
+
+        def update_test_execution(test_execution_id, body)
+          put "/testexecutions/#{test_execution_id}", body
+        end
       end
     end
   end
