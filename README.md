@@ -14,7 +14,9 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-This gem provides access to the Zephyr Scale REST API.
+To get started all you need to do is set your zephyr API access token and instantiate the client.
+
+For API endpoint usage see the official REST API documentation [here](https://support.smartbear.com/zephyr-scale-cloud/api-docs/#section/Introduction).
 
 ```ruby
 require 'zephyr_ruby'
