@@ -41,10 +41,6 @@ module ZephyrRuby
           post "/testexecutions/#{test_execution_id}/teststeps/sync"
         end
 
-        def get_test_execution_links(test_execution_id)
-          get "/testexecutions/#{test_execution_id}/links"
-        end
-
         def create_test_execution_issue_link(test_execution_id, body)
           post "/testexecutions/#{test_execution_id}/links/issues", body
         end
