@@ -16,6 +16,7 @@ require_relative 'resource/test_plans'
 require_relative 'connection'
 
 require 'faraday'
+require 'faraday/multipart'
 require 'json'
 
 module ZephyrRuby
@@ -39,7 +40,11 @@ module ZephyrRuby
     def initialize(api_token)
       @base_url = 'https://api.zephyrscale.smartbear.com/v2'
       @api_token = api_token
-      @client = Faraday.new(@base_url, builder: build_middleware)
+      @client = Faraday.new(@base_url) do |f|
+        f.request :multipart
+        f.request :url_encoded
+        f.adapter Faraday.default_adapter
+      end
       @headers = {
         'Authorization' => "Bearer #{@api_token}",
         'Content-Type' => 'application/json'
