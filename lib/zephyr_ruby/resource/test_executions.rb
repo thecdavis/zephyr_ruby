@@ -28,6 +28,26 @@ module ZephyrRuby
         def update_test_execution(test_execution_id, body)
           put "/testexecutions/#{test_execution_id}", body
         end
+
+        def get_test_steps(test_execution_id)
+          get "/testexecutions/#{test_execution_id}/teststeps"
+        end
+
+        def update_test_steps(test_execution_id, body)
+          put "/testexecutions/#{test_execution_id}/teststeps", body
+        end
+
+        def sync_test_execution(test_execution_id)
+          post "/testexecutions/#{test_execution_id}/teststeps/sync"
+        end
+
+        def get_test_execution_links(test_execution_id)
+          get "/testexecutions/#{test_execution_id}/links"
+        end
+
+        def create_test_execution_issue_link(test_execution_id, body)
+          post "/testexecutions/#{test_execution_id}/links/issues", body
+        end
       end
     end
   end
