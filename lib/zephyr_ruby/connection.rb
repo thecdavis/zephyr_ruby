@@ -8,8 +8,21 @@ module ZephyrRuby
       request :get, path, params
     end
 
-    def post(path, body)
-      body = body.to_json if body.is_a?(Hash)
+    def post(path, body, file_path = nil)
+      if file_path
+        mime_type = case File.extname(file_path).downcase
+                    when '.json' then 'application/json'
+                    when '.xml'  then 'application/xml'
+                    when '.zip'  then 'application/zip'
+                    else 'application/octet-stream'
+                    end
+
+        file = Faraday::UploadIO.new(file_path, mime_type)
+        body = { file: file }.merge(body) if body.is_a?(Hash)
+      elsif body.is_a?(Hash)
+        body = body.to_json
+      end
+
       request :post, path, body
     end
 
